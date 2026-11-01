@@ -1,0 +1,9 @@
+{
+  "name": "STUDY FLOW",
+  "short_name": "Study Flow",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fc",
+  "theme_color": "#172554",
+  "description": "Organise tes devoirs, tes révisions et ta journée."
+}

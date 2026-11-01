@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172554">
+  <title>STUDY FLOW</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo">SF</span><div><h1>STUDY FLOW</h1><p>Ton organisation, à ton rythme.</p></div></div>
+    <div id="today" class="today"></div>
+  </header>
+
+  <main>
+    <section class="welcome card">
+      <p class="eyebrow">TON ESPACE DE TRAVAIL</p>
+      <h2>On organise ta journée ?</h2>
+      <p class="muted">Entre ce que tu dois faire. Study Flow t'aide à construire un programme réaliste.</p>
+    </section>
+
+    <section class="card">
+      <h2>1. Les informations du jour</h2>
+      <div class="grid2">
+        <label>Jour
+          <select id="day">
+            <option>Lundi</option><option>Mardi</option><option>Mercredi</option>
+            <option>Jeudi</option><option>Vendredi</option><option>Samedi</option><option>Dimanche</option>
+          </select>
+        </label>
+        <label>Heure de fin des cours
+          <input id="schoolEnd" type="time" value="16:00">
+        </label>
+        <label>Heure de coucher
+          <input id="bedtime" type="time" value="22:00">
+        </label>
+        <label>Ton énergie aujourd'hui
+          <select id="energy"><option value="Bonne">Bonne</option><option value="Moyenne" selected>Moyenne</option><option value="Faible">Faible</option></select>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2. Tes devoirs et exercices</h2>
+      <p class="muted small">Ajoute chaque travail séparément avec sa matière et son importance.</p>
+      <div class="grid2">
+        <label>Matière
+          <select id="taskSubject">
+            <option>Mathématiques</option><option>PCT</option><option>SVT</option>
+            <option>Anglais</option><option>Français</option><option>Philosophie</option><option>Histoire-Géographie</option><option>Autre</option>
+          </select>
+        </label>
+        <label>Type de travail
+          <select id="taskType"><option>Devoir</option><option>Exercices</option><option>Apprentissage du cours</option><option>Préparation</option></select>
+        </label>
+      </div>
+      <label>Que dois-tu faire ?
+        <input id="taskText" placeholder="Ex. : terminer les exercices sur le discriminant">
+      </label>
+      <div class="grid2">
+        <label>Durée estimée
+          <select id="taskDuration"><option value="15">15 min</option><option value="30" selected>30 min</option><option value="45">45 min</option><option value="60">1 heure</option><option value="90">1 h 30</option><option value="120">2 heures</option></select>
+        </label>
+        <label>Priorité
+          <select id="taskPriority"><option value="Urgent">Urgent / pour demain</option><option value="Important" selected>Important</option><option value="Peut attendre">Peut attendre</option></select>
+        </label>
+      </div>
+      <button id="addTask" class="secondary">+ Ajouter ce travail</button>
+      <div id="taskList" class="task-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>3. Préparer les cours de demain</h2>
+      <label>Matières à préparer
+        <input id="tomorrowSubjects" placeholder="Ex. : Mathématiques, SVT, Français">
+      </label>
+      <label>Leçons à apprendre ou revoir
+        <textarea id="lessons" rows="3" placeholder="Ex. : SVT — datation relative ; Maths — fonctions"></textarea>
+      </label>
+      <div class="grid2">
+        <label>Sport aujourd'hui ?
+          <select id="sport"><option>Oui, léger</option><option>Non</option></select>
+        </label>
+        <label>Temps libre souhaité
+          <select id="freeTime"><option value="30">30 minutes</option><option value="45" selected>45 minutes</option><option value="60">1 heure</option></select>
+        </label>
+      </div>
+    </section>
+
+    <button id="generate" class="primary">Créer mon programme</button>
+
+    <section id="result" class="card result hidden">
+      <div class="result-head"><div><p class="eyebrow">TON PROGRAMME</p><h2>Ta journée organisée</h2></div><button id="copy" class="copy">Copier</button></div>
+      <div id="schedule"></div>
+      <p class="tip">Conseil : si un devoir prend plus de temps que prévu, ajuste le programme. Le sommeil reste prioritaire.</p>
+    </section>
+
+    <section class="card">
+      <h2>Mes habitudes</h2>
+      <div class="habit"><span>Préparer mon sac</span><span class="habit-time">Avant 22 h</span></div>
+      <div class="habit"><span>Faire une pause entre les blocs</span><span class="habit-time">5–10 min</span></div>
+      <div class="habit"><span>Me coucher à l'heure</span><span class="habit-time">22 h</span></div>
+    </section>
+  </main>
+  <footer>STUDY FLOW · Version 1.0 · Tes progrès, un jour à la fois.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
